@@ -18,6 +18,3 @@ def buildService(){
         sh "mvn clean install"
     }
 }
-
-
-}
