@@ -5,15 +5,15 @@ def call(){
         }
 
         // Execute different stages depending on the job
-        if(env.JOB_NAME.contains("SpringRestServices")){
-            packageArtifact()
+        if(env.JOB_NAME.contains("build")){
+            buildService()
         } else if(env.JOB_NAME.contains("test")) {
             //buildAndTest()
         }
     }
 }
 
-def packageArtifact(){
+def buildService(){
     stage("Package artifact") {
         sh "mvn clean install"
     }
