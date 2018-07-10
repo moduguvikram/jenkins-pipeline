@@ -4,17 +4,19 @@ def call(){
             checkout scm
         }
 
-        // Execute different stages depending on the job
+
         if(env.JOB_NAME.contains("build")){
             buildService()
-        } else if(env.JOB_NAME.contains("test")) {
-            //buildAndTest()
+        }else if(env.JOB_NAME.contains("publish")) {
+             buildService()
+        }else if(env.JOB_NAME.contains("test")) {
+ 
         }
     }
 }
 
 def buildService(){
-    stage("Package artifact") {
+    stage("Build") {
          //"mvn clean install"
         "cmd /c mvn clean install"
     }
