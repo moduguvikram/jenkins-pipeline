@@ -24,10 +24,11 @@ def createBuildJob(jobName, repoUrl) {
 def buildPipelineJobs() {
     def repo = "https://github.com/moduguvikram/"
     def repoUrl = repo + jobName + ".git"
+    def buildName = jobName + "_build"
     def deployName = jobName + "_deploy"
     def testName = jobName + "_test"
 
-    createBuildJob(deployName, repoUrl)
+    createBuildJob(buildName, repoUrl)
 }
 
 buildPipelineJobs()
