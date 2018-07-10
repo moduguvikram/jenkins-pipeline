@@ -4,7 +4,9 @@ def call(){
             checkout scm
         }
 
-
+        stage('Docker') {
+            
+        }
         if(env.JOB_NAME.contains("build")){
             buildService()
         }else if(env.JOB_NAME.contains("publish")) {
