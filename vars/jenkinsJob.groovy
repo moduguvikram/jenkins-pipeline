@@ -3,10 +3,6 @@ def call(){
         stage('Checkout') {
             checkout scm
         }
-
-        stage('Docker') {
-            
-        }
         if(env.JOB_NAME.contains("build")){
             buildService()
         }else if(env.JOB_NAME.contains("publish")) {
@@ -14,6 +10,13 @@ def call(){
         }else if(env.JOB_NAME.contains("test")) {
  
         }
+        stage('Docker') {
+            
+        }
+        stage('Publish') {
+            
+        }
+        
     }
 }
 
