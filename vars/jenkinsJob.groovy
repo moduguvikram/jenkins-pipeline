@@ -15,6 +15,7 @@ def call(){
 
 def buildService(){
     stage("Package artifact") {
-        sh "mvn clean install"
+         //"mvn clean install"
+        "cmd /c mvn clean install"
     }
 }
